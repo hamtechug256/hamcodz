@@ -211,9 +211,9 @@ export function Hero() {
             className="flex items-center justify-center gap-4"
           >
             {[
-              { icon: Twitter, href: 'https://twitter.com/hamcodz', label: 'Twitter', hoverColor: 'hover:bg-sky-500/20 hover:border-sky-500/50' },
-              { icon: Github, href: 'https://github.com/hamcodz', label: 'GitHub', hoverColor: 'hover:bg-white/10' },
-              { icon: Send, href: 'https://t.me/hamcodz', label: 'Telegram', hoverColor: 'hover:bg-blue-500/20 hover:border-blue-500/50' },
+              { icon: Twitter, href: 'https://x.com/hamcodz', label: 'Twitter', hoverColor: 'hover:bg-sky-500/20 hover:border-sky-500/50' },
+              { icon: Github, href: 'https://github.com/hamtechug256', label: 'GitHub', hoverColor: 'hover:bg-white/10' },
+              { icon: Send, href: 'https://t.me/Hamcodz', label: 'Telegram', hoverColor: 'hover:bg-blue-500/20 hover:border-blue-500/50' },
             ].map((social) => (
               <motion.a
                 key={social.label}

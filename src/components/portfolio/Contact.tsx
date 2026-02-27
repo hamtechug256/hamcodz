@@ -25,19 +25,19 @@ import {
 const socialLinks = [
   { 
     icon: Twitter, 
-    href: 'https://twitter.com/hamcodz', 
+    href: 'https://x.com/hamcodz', 
     label: 'Twitter',
     hoverColor: 'hover:bg-sky-500/20 hover:border-sky-500/40'
   },
   { 
     icon: Github, 
-    href: 'https://github.com/hamcodz', 
+    href: 'https://github.com/hamtechug256', 
     label: 'GitHub',
     hoverColor: 'hover:bg-white/10'
   },
   { 
     icon: MessageCircle, 
-    href: 'https://t.me/hamcodz', 
+    href: 'https://t.me/Hamcodz', 
     label: 'Telegram',
     hoverColor: 'hover:bg-blue-500/20 hover:border-blue-500/40'
   },
