@@ -94,12 +94,12 @@ export function Footer() {
             
             <div className="flex items-center gap-4">
               <a 
-                href="https://hamcodz.is-a.dev"
+                href="https://hamcodz-portfolio.vercel.app"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-sm text-white/40 hover:text-emerald-400 transition-colors font-mono"
               >
-                hamcodz.is-a.dev
+                hamcodz-portfolio.vercel.app
               </a>
             </div>
           </div>

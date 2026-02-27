@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence } from 'framer-motion';
 import { AnimatedSection } from './AnimatedSection';
 import { Badge } from '@/components/ui/badge';
@@ -30,6 +31,7 @@ const projects = [
     description: 'ICT-based algorithmic trading strategy capitalizing on Monday range expansion.',
     longDescription: 'This sophisticated trading strategy leverages key ICT concepts including Order Blocks, Fair Value Gaps, and liquidity sweeps to identify high-probability trading opportunities. Built with extensive backtesting and optimized for EURUSD.',
     icon: TrendingUp,
+    image: '/images/projects/eurusd-trading.png',
     tags: ['ICT', 'EURUSD', 'Algo Trading', 'Backtesting'],
     metrics: [
       { label: 'Win Rate', value: '76%' },
@@ -53,6 +55,7 @@ const projects = [
     description: 'MQL5 framework for building robust Expert Advisors with built-in risk management.',
     longDescription: 'A modular Expert Advisor framework that simplifies the development of automated trading systems. Includes advanced money management, trailing stops, and a flexible signal system.',
     icon: Cpu,
+    image: '/images/projects/ea-framework.png',
     tags: ['MQL5', 'MetaTrader', 'Automation', 'Risk'],
     metrics: [
       { label: 'EAs Built', value: '15+' },
@@ -76,6 +79,7 @@ const projects = [
     description: 'Comprehensive toolkit for web application security testing and vulnerability assessment.',
     longDescription: 'An integrated security testing suite combining automated scanning with manual testing capabilities. Covers OWASP Top 10 vulnerabilities and includes custom scripts for advanced penetration testing.',
     icon: Shield,
+    image: '/images/projects/security-toolkit.png',
     tags: ['Python', 'Security', 'Pentest', 'OWASP'],
     metrics: [
       { label: 'Vulns Found', value: '200+' },
@@ -99,6 +103,7 @@ const projects = [
     description: 'High-performance Python backtesting engine with tick-level data processing.',
     longDescription: 'Built from scratch to handle tick-level data processing, this engine provides comprehensive strategy validation with Monte Carlo simulations and walk-forward analysis.',
     icon: BarChart3,
+    image: '/images/projects/backtesting-engine.png',
     tags: ['Python', 'Pandas', 'Backtest', 'Data'],
     metrics: [
       { label: 'Strategies', value: '100+' },
@@ -122,6 +127,7 @@ const projects = [
     description: 'Real-time network monitoring with ML-based anomaly detection and alerting.',
     longDescription: 'A sophisticated network security monitoring solution using machine learning to detect anomalies and potential intrusions in real-time. Includes packet capture and automated response.',
     icon: Bug,
+    image: '/images/projects/intrusion-detector.png',
     tags: ['Python', 'ML', 'Network', 'Security'],
     metrics: [
       { label: 'Detection', value: '98%' },
@@ -145,6 +151,7 @@ const projects = [
     description: 'Real-time market analysis dashboard with live charts and trading signals.',
     longDescription: 'A comprehensive web-based dashboard aggregating market data, displaying real-time technical analysis, and providing actionable trading signals with multi-timeframe analysis.',
     icon: Gauge,
+    image: '/images/projects/analytics-dashboard.png',
     tags: ['React', 'Next.js', 'Charts', 'Real-time'],
     metrics: [
       { label: 'Instruments', value: '50+' },
@@ -240,8 +247,13 @@ export function Projects() {
                 >
                   <div className="glass-card rounded-2xl overflow-hidden border border-white/5 hover:border-white/15 transition-colors h-full">
                     {/* Project Visual */}
-                    <div className={`relative h-44 bg-gradient-to-br ${project.gradient} p-6 flex items-center justify-center overflow-hidden`}>
-                      <project.icon className="w-20 h-20 text-black/15" />
+                    <div className="relative h-44 overflow-hidden">
+                      <Image 
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-110"
+                      />
                       <div className="absolute inset-0 bg-black/40 group-hover:bg-black/30 transition-colors" />
                       
                       {/* Category Badge */}
@@ -307,30 +319,34 @@ export function Projects() {
               onClick={(e) => e.stopPropagation()}
               className="relative glass-card rounded-3xl max-w-2xl w-full max-h-[90vh] overflow-y-auto border border-white/10"
             >
-              {/* Header Gradient */}
-              <div className={`h-1.5 bg-gradient-to-r ${selectedProject.gradient}`} />
+              {/* Project Image Header */}
+              <div className="relative h-48 overflow-hidden rounded-t-3xl">
+                <Image 
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+                <div className={`absolute bottom-0 left-0 right-0 h-1.5 bg-gradient-to-r ${selectedProject.gradient}`} />
+              </div>
               
               {/* Close */}
               <button
                 onClick={() => setSelectedProject(null)}
-                className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition-colors z-10"
+                className="absolute top-4 right-4 w-10 h-10 rounded-full bg-black/40 backdrop-blur-sm flex items-center justify-center hover:bg-black/60 transition-colors z-10"
               >
-                <X className="w-5 h-5 text-white/70" />
+                <X className="w-5 h-5 text-white" />
               </button>
 
               {/* Content */}
               <div className="p-8">
                 {/* Header */}
-                <div className="flex items-start gap-5 mb-8">
-                  <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${selectedProject.gradient} flex items-center justify-center flex-shrink-0`}>
-                    <selectedProject.icon className="w-8 h-8 text-black" />
-                  </div>
-                  <div>
-                    <Badge variant="outline" className="mb-2 text-xs border-white/20 text-white/60">{selectedProject.category}</Badge>
-                    <h3 className="text-2xl font-bold text-white">
-                      {selectedProject.title}
-                    </h3>
-                  </div>
+                <div className="mb-6">
+                  <Badge variant="outline" className="mb-2 text-xs border-white/20 text-white/60">{selectedProject.category}</Badge>
+                  <h3 className="text-2xl font-bold text-white">
+                    {selectedProject.title}
+                  </h3>
                 </div>
 
                 {/* Description */}
@@ -383,14 +399,6 @@ export function Projects() {
                       <a href={selectedProject.github} target="_blank" rel="noopener noreferrer">
                         <Github className="w-4 h-4 mr-2" />
                         View Code
-                      </a>
-                    </Button>
-                  )}
-                  {selectedProject.demo && (
-                    <Button className="btn-primary" asChild>
-                      <a href={selectedProject.demo} target="_blank" rel="noopener noreferrer">
-                        <ExternalLink className="w-4 h-4 mr-2" />
-                        Live Demo
                       </a>
                     </Button>
                   )}
