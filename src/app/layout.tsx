@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     "Hamcodz",
     "HAMCODZ",
     "Full-Stack Developer",
-    "Cybersecurity Expert",
+    "Cybersecurity Expert", 
     "Ethical Hacker",
     "Forex Trader",
     "EA Developer",
@@ -50,27 +50,26 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': "large",
+      "max-video-preview": -1,
+      "max-image-preview": "large",
     },
   },
   icons: {
     icon: "/logo.svg",
-    apple: "/logo.svg",
   },
   openGraph: {
     type: "website",
     locale: "en_US",
     url: "https://hamcodz.duckdns.org",
     title: "HAMCODZ | Full-Stack Developer & Cybersecurity Expert",
-    description: "Full-Stack Developer, Cybersecurity Expert, Forex Trader & EA Developer from Uganda.",
+    description: "Full-Stack Developer, Cybersecurity Expert, Forex Trader & EA Developer from Uganda. Building secure systems and profitable algorithms.",
     siteName: "HAMCODZ",
     images: [
       {
         url: "https://hamcodz.duckdns.org/logo.svg",
         width: 1200,
         height: 630,
-        alt: "HAMCODZ Logo",
+        alt: "HAMCODZ Portfolio",
       },
     ],
   },
@@ -79,12 +78,10 @@ export const metadata: Metadata = {
     title: "HAMCODZ | Full-Stack Developer & Cybersecurity Expert",
     description: "Full-Stack Developer, Cybersecurity Expert, Forex Trader & EA Developer from Uganda.",
     creator: "@hamcodz",
-    images: ["https://hamcodz.duckdns.org/logo.svg"],
   },
-  verification: {
-    google: "https://hamcodz.duckdns.org/",
+  alternates: {
+    canonical: "https://hamcodz.duckdns.org",
   },
-  category: "Technology",
 };
 
 export default function RootLayout({
@@ -96,6 +93,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning className="dark">
       <head>
         <link rel="canonical" href="https://hamcodz.duckdns.org" />
+        <meta name="google-site-verification" content="yKNC2v8Ttu12N5h24010BmBQhRSmduuvkNWRbPpL0Pc" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}
