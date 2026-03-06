@@ -20,7 +20,9 @@ import {
   ChevronRight,
   Target,
   Terminal,
-  ArrowUpRight
+  ArrowUpRight,
+  Wifi,
+  Router
 } from 'lucide-react';
 
 const projects = [
@@ -168,9 +170,59 @@ const projects = [
     gradient: 'from-blue-400 to-indigo-500',
     github: 'https://github.com/hamtechug256',
   },
+  {
+    id: 7,
+    title: 'MAC Spoofer',
+    category: 'Pentest Tools',
+    description: 'Professional MAC Address Spoofing Tool for WiFi network analysis and security testing.',
+    longDescription: 'A comprehensive Linux-based tool for MAC address spoofing with WiFi network scanning, connected client discovery, and monitor mode capabilities. Features a beautiful terminal UI with Matrix-style animations.',
+    icon: Wifi,
+    image: '/images/projects/security-toolkit.png',
+    tags: ['Python', 'WiFi', 'Security', 'Linux'],
+    metrics: [
+      { label: 'Networks', value: '∞' },
+      { label: 'Clients', value: '∞' },
+      { label: 'Speed', value: '<1s' },
+    ],
+    features: [
+      'WiFi network scanning',
+      'Connected client discovery',
+      'MAC address spoofing',
+      'Monitor mode toggle',
+    ],
+    color: 'emerald',
+    gradient: 'from-emerald-400 to-cyan-500',
+    github: 'https://github.com/hamtechug256/mac-spoofer',
+    demo: 'https://github.com/hamtechug256/mac-spoofer',
+  },
+  {
+    id: 8,
+    title: 'RouterPwn Framework',
+    category: 'Pentest Tools',
+    description: 'Automated router penetration testing framework for MikroTik, Cisco, and more.',
+    longDescription: 'A powerful penetration testing framework designed for router security assessment. Features default credential testing, vulnerability scanning, known exploit modules, and privilege escalation capabilities for various router vendors.',
+    icon: Router,
+    image: '/images/projects/intrusion-detector.png',
+    tags: ['Python', 'MikroTik', 'Cisco', 'Pentest'],
+    metrics: [
+      { label: 'Vendors', value: '10+' },
+      { label: 'CVEs', value: '5+' },
+      { label: 'Creds', value: '100+' },
+    ],
+    features: [
+      'Network discovery & scanning',
+      'Default credential testing',
+      'Vulnerability exploitation',
+      'Privilege escalation',
+    ],
+    color: 'red',
+    gradient: 'from-red-400 to-orange-500',
+    github: 'https://github.com/hamtechug256/routerpwn',
+    demo: 'https://github.com/hamtechug256/routerpwn',
+  },
 ];
 
-const categories = ['All', 'Trading', 'EA Development', 'Cybersecurity', 'Development', 'Ethical Hacking', 'Full-Stack'];
+const categories = ['All', 'Trading', 'EA Development', 'Cybersecurity', 'Pentest Tools', 'Development', 'Ethical Hacking', 'Full-Stack'];
 
 export function Projects() {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
