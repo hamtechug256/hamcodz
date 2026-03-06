@@ -177,7 +177,7 @@ const projects = [
     description: 'Professional MAC Address Spoofing Tool for WiFi network analysis and security testing.',
     longDescription: 'A comprehensive Linux-based tool for MAC address spoofing with WiFi network scanning, connected client discovery, and monitor mode capabilities. Features a beautiful terminal UI with Matrix-style animations.',
     icon: Wifi,
-    image: '/images/projects/security-toolkit.png',
+    image: '/images/projects/mac-spoofer.svg',
     tags: ['Python', 'WiFi', 'Security', 'Linux'],
     metrics: [
       { label: 'Networks', value: '∞' },
@@ -202,7 +202,7 @@ const projects = [
     description: 'Automated router penetration testing framework for MikroTik, Cisco, and more.',
     longDescription: 'A powerful penetration testing framework designed for router security assessment. Features default credential testing, vulnerability scanning, known exploit modules, and privilege escalation capabilities for various router vendors.',
     icon: Router,
-    image: '/images/projects/intrusion-detector.png',
+    image: '/images/projects/routerpwn.svg',
     tags: ['Python', 'MikroTik', 'Cisco', 'Pentest'],
     metrics: [
       { label: 'Vendors', value: '10+' },
